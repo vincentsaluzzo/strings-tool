@@ -8,7 +8,7 @@ var commands = require(lib+'/command.js');
 
 
 program
-  .version('0.0.1')
+  .version('1.0.1')
   .option("-i, --ios", "import/export to/from iOS strings files")
   .option("-a, --android", "import/export to/from Android XML resource files")
 

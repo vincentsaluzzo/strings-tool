@@ -1,6 +1,6 @@
 {
   "name": "strings-tool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "strings tool simplify the import/export of Android/iOS strings file to and from Excel XLSX file",
   "main": "./bin/strings-tool",
   "bin": {
