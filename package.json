@@ -1,0 +1,25 @@
+{
+  "name": "strings-tool",
+  "version": "1.0.0",
+  "description": "strings tool simplify the import/export of Android/iOS strings file to and from Excel XLSX file",
+  "main": "./bin/strings-tool",
+  "bin": {
+    "strings-tool": "./bin/strings-tool"
+  },
+  "dependencies": {
+    "commander": "*",
+    "node-simple-xlsx": "*",
+    "i18n-strings-files": "*",
+    "xml-parser": "*",
+    "lodash": "*",
+    "he": "*",
+    "xlsx-rows": "*",
+    "xml": "*",
+    "xml2js": "*"
+  },
+  "author": "Vincent Saluzzo <vincentsaluzzo@gmail.com",
+  "license": "MIT",
+  "repository": {
+    "url": ""
+  }
+}

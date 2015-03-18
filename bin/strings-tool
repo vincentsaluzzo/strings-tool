@@ -1,0 +1,47 @@
+#!/usr/bin/env node
+var path = require('path');
+var fs = require('fs');
+var program = require ('commander');
+var lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
+var commands = require(lib+'/command.js');
+
+
+
+program
+  .version('0.0.1')
+  .option("-i, --ios", "import/export to/from iOS strings files")
+  .option("-a, --android", "import/export to/from Android XML resource files")
+
+program
+  .command('export <outputExcelFilePath> <inputFiles...>')
+  .description("Export platform localized string file (XML or strings) to Excel format")
+  .action(function(outputExcelFilePath, inputFiles, options) {
+    console.log("Export... ");
+
+
+    if (options.parent.android === true) {
+      commands.export("android", inputFiles, outputExcelFilePath);
+    } else {
+      //by default, it's iOS, just because I love it ;)
+      commands.export("ios", inputFiles, outputExcelFilePath);
+    }
+  });
+
+
+program
+  .command('import <inputExcelFilePath> <outputFiles...>')
+  .description("Export platform localized string file (XML or strings) to Excel format")
+  .action(function(inputExcelFilePath, outputFiles, options) {
+    console.log("Import... ");
+
+
+    if (options.parent.android === true) {
+      commands.import("android", inputExcelFilePath, outputFiles);
+    } else {
+      //by default, it's iOS, just because I love it ;)
+      commands.import("ios", inputExcelFilePath, outputFiles);
+    }
+  });
+
+
+program.parse(process.argv);
